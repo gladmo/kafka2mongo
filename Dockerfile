@@ -23,8 +23,8 @@ WORKDIR /app/
 
 ENV TZ=Asia/Shanghai \
     MONGODB_DSN=mongodb://localhost:27017 \
-    KAFKA_ADDR=localhost:9092
-
+    KAFKA_ADDR=localhost:9092 \
+    EXCLUDE_TOPICS=__consumer_offsets
 
 COPY --from=pre-build /go/src/kafka2mongo/kafka2mongo .
 COPY --from=pre-build /etc/timezone /etc/timezone
